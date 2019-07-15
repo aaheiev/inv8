@@ -1,0 +1,50 @@
+{
+  "disable_array_add"             : false,
+  "disable_array_delete"          : false,
+  "disable_array_repropertyOrder" : true,
+  "disable_collapse"              : true,
+  "disable_edit_json"             : true,
+  "disable_properties"            : true,
+  "theme"                         : "bootstrap3",
+  "iconlib"                       : "html",
+  "no_additional_properties"      : true,
+  "schema"                        : {
+    "id"                          : "args",
+    "title"                       : "docker image",
+    "type"                        : "object",
+    "format"                      : "table",
+    "properties"                  : {
+      "docker_image"              : {
+        "propertyOrder"           : 1,
+        "title"                   : "model set:",
+        "type"                    : "object",
+        "format"                  : "grid",
+        "oneOf"                   : [
+          {
+            "title"               : "EDD-IND",
+            "properties"          : {
+              "name"              : {
+                "propertyOrder"   : 1,
+                "type"            : "string",
+                "readOnly"        : "true",
+                "template"        : "ngs-edd-ind-model",
+                "watch"           : {
+                  "environment"   : "environment.oneOf"
+                }
+              },
+              "tag"               : {
+                "propertyOrder"   : 2,
+                "type"            : "string",
+                "format"          : "select",
+                "uniqueItems"     : true,
+                "enum"            : ["0.6.0.28", "0.6.0.27", "0.6.0.25"
+                ],
+                "default"         : "0.6.0.28"
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

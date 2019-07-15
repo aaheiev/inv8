@@ -1,0 +1,21 @@
+{
+  "title"                       : "Docker image",
+  "type"                        : "object",
+  "format"                      : "grid",
+  "properties"                  : {
+    "docker_image_name"         : {
+      "propertyOrder"           : 1,
+      "type"                    : "string",
+      "readOnly"                : "true",
+      "template"                : "ngs-edd-ind-model"
+    },
+    "docker_image_tag"          : {
+      "propertyOrder"           : 2,
+      "type"                    : "string",
+      "format"                  : "select",
+      "uniqueItems"             : true,
+      "enum"                    : ["1.6.0.28", "1.6.0.27", "1.6.0.25"],
+      "default"                 : "1.6.0.28"
+    }
+  }
+}

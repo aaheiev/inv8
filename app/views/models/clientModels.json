@@ -1,0 +1,15 @@
+{
+  "title"                   : "IND models",
+  "propertyOrder"           : 1,
+  "type"                    : "array",
+  "format"                  : "table",
+  "uniqueItems"             : true,
+  "minLength"               : 1,
+  "items"                   : {
+    "title"                 : "Model",
+    "type"                  : "object",
+    "format"                : "grid",
+    "required"              : [ "name", "version"],
+    "oneOf"                 : []
+  }
+}

@@ -1,0 +1,50 @@
+---
+apiVersion:         extensions/v1beta1
+kind:               Deployment
+metadata:
+  name:             ngs-inv8
+  namespace:        jenkins
+spec:
+  replicas:         1
+  template:
+    metadata:
+      labels:
+        app:        ngs-inv8
+    spec:
+      imagePullSecrets:
+      - name:       ngsnonprodregkey
+      containers:
+      - name:       jets
+        image:      ngsnonprod.azurecr.io/ngs-inv8:1.0.2
+#        command:    ["jets","server","--host","0.0.0.0"]
+#        command:    ["tail", "-f", "/dev/null"]
+        resources:
+          limits:
+            cpu:    300m
+            memory: 256Mi
+          requests:
+            cpu:    100m
+            memory: 128Mi
+        envFrom:
+          - configMapRef:
+              name: inv8-config
+          - secretRef:
+              name: erdd-aws
+        ports:
+        - containerPort:    8888
+        livenessProbe:
+          httpGet:
+            path:           /
+            port:           8888
+          periodSeconds:    45
+          timeoutSeconds:   2
+          successThreshold: 1
+          failureThreshold: 10
+        readinessProbe:
+          httpGet:
+            path:           /
+            port:           8888
+          periodSeconds:    10
+          timeoutSeconds:   2
+          successThreshold: 1
+          failureThreshold: 10

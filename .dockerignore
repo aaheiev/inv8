@@ -1,0 +1,13 @@
+.idea
+*.gem
+.bundle
+.byebug_history
+.DS_Store
+/node_modules
+/public/packs
+/public/packs-test
+bundled
+coverage
+pkg
+tmp
+.git

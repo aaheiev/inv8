@@ -1,0 +1,24 @@
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name:           ngs-inv8
+  namespace:      jenkins
+  labels:
+    app:          ngs-inv8
+  annotations:
+    kubernetes.io/ingress.class: "nginx-internal"
+    kubernetes.io/tls-acme: "true"
+spec:
+  rules:
+    - host: ptn-inv8.fdr.pitneycloud.com
+      http:
+        paths:
+          - backend:
+              serviceName: ngs-inv8
+              servicePort: 8888
+            path: /
+  tls:
+    - hosts:
+        - ptn-inv8.fdr.pitneycloud.com
+      secretName: fdr.pitneycloud-tls

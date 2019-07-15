@@ -1,0 +1,14 @@
+# Jets::Config.project_namespace is special value results in using the project namespace. Example :
+# table_namespace: <%= Jets.config.project_namespace %>
+# This is the default value.
+
+development:
+  table_namespace: <%= Jets.config.table_namespace %>
+
+test:
+  # table_namespace: proj # do not include the env
+  endpoint: http://127.0.0.1:8000
+  table_namespace: inv8-test
+
+production:
+  table_namespace: <%= Jets.config.table_namespace %>

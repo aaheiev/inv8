@@ -1,0 +1,16 @@
+---
+apiVersion:       v1
+kind:             Service
+metadata:
+  name:           ngs-inv8
+  namespace:      jenkins
+  labels:
+    app:          ngs-inv8
+spec:
+  type:           ClusterIP
+  ports:
+  - port:         8888
+    protocol:     TCP
+    targetPort:   8888
+  selector:
+    app:          ngs-inv8

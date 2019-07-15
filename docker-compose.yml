@@ -1,0 +1,20 @@
+---
+version: '3.7'
+
+services:
+
+#  dynamodb:
+#    image: instructure/dynamo-local-admin
+#    ports:
+#      - "8000:8000"
+#      - "8001:8001"
+#      - "8002:8002"
+
+  jets:
+    image: mydao/inv8:1.0.2
+    environment:
+      JETS_ENV:              production
+      AWS_ACCESS_KEY_ID:     XXXXXXXXXXXXXXXXXXX
+      AWS_SECRET_ACCESS_KEY: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+    ports:
+      - "8888:8888"

@@ -1,0 +1,26 @@
+{
+  "disable_edit_json"        : true,
+  "disable_properties"       : true,
+  "no_additional_properties" : true,
+  "disable_collapse"         : true,
+  "required_by_default"      : true,
+  "disable_array_add"        : true,
+  "disable_array_delete"     : false,
+  "disable_array_reorder"    : true,
+  "theme"                    : "bootstrap3",
+  "iconlib"                  : "html",
+  "schema"                   : {
+    "title"                  : "Person",
+    "type"                   : "object",
+    "format"                 : "categories",
+    "basicCategoryTitle"     : "Main",
+    "properties": {
+      "name"                 : { "type": "string", "title": "Name" },
+      "number"               : { "type": "number" },
+      "name1"                : { "type": "string", "title": "Name1" },
+      "name2"                : { "type": "string", "title": "Name2" },
+      "name3"                : { "type": "string", "title": "Name3" },
+      "name4"                : { "type": "string", "title": "Name4", "hidden": true }
+    }
+  }
+}

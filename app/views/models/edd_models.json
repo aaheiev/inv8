@@ -1,0 +1,233 @@
+{
+  "disable_edit_json"        : true,
+  "disable_properties"       : true,
+  "no_additional_properties" : true,
+  "disable_collapse"         : true,
+  "required_by_default"      : true,
+  "disable_array_add"        : true,
+  "disable_array_delete"     : false,
+  "disable_array_reorder"    : true,
+  "theme"                    : "bootstrap3",
+  "iconlib"                  : "html",
+  "schema"                   : {
+    "title"                  : "Select Models",
+    "type"                   : "object",
+    "id"                     : "args",
+    "properties"             : {
+
+      "IND_models"           : {
+        "propertyOrder"      : 1,
+        "type"               : "array",
+        "format"             : "grid",
+        "uniqueItems"        : true,
+        "minLength"          : 1,
+
+        "items": {
+          "title"            : "Model",
+          "type"             : "object",
+          "format"           : "grid",
+          "required"         : [ "name", "version"],
+          "oneOf": [
+            {
+              "title"             : "common-ATL3",
+              "properties"        : {
+                "name"            : {
+                  "propertyOrder" : 1,
+                  "type"          : "string",
+                  "readOnly"      : "true",
+                  "enum"          : ["eddmodel-IND-common-ATL3"]
+
+                },
+                "version"
+                : {
+                  "propertyOrder" : 2,
+                  "type"          : "string",
+                  "format"        : "select",
+                  "uniqueItems"   : true,
+                  "enum"          : [
+                    "10003",
+                    "10002",
+                    "10000",
+                    "108",
+                    "102",
+                    "82",
+                    "73",
+                    "67",
+                    "65",
+                    "55",
+                    "53",
+                    "52",
+                    "49",
+                    "48",
+                    "37",
+                    "35"
+                  ],
+                  "default"       : "10003"
+                }
+              }
+            },
+            {
+              "title": "common-SFO1",
+              "properties": {
+                "name": {
+                  "propertyOrder": 1,
+                  "type": "string",
+                  "readOnly": "true",
+                  "enum": [
+                    "eddmodel-IND-common-SFO1"
+                  ]
+                },
+                "version": {
+                  "propertyOrder": 2,
+                  "type": "string",
+                  "format": "select",
+                  "uniqueItems": true,
+                  "enum": [
+                    "10003",
+                    "10002",
+                    "10000",
+                    "108",
+                    "102",
+                    "82",
+                    "73",
+                    "67",
+                    "65",
+                    "55",
+                    "53",
+                    "52",
+                    "49",
+                    "48",
+                    "37",
+                    "35"
+                  ],
+                  "default": "10003"
+                }
+              }
+            }
+          ]
+        },
+        "title": "IND models"
+      },
+      "SHP_models": {
+        "propertyOrder": 2,
+        "type": "array",
+        "uniqueItems": true,
+        "minLength": 1,
+        "items": {
+          "title": "Model",
+          "type": "object",
+          "format": "grid",
+          "required": [
+            "name",
+            "version"
+          ],
+          "oneOf": [
+            {
+              "title": "common-ATL3",
+              "properties": {
+                "name": {
+                  "propertyOrder": 1,
+                  "type": "string",
+                  "readOnly": "true",
+                  "enum": [
+                    "eddmodel-SHP-common-ATL3"
+                  ]
+                },
+                "version": {
+                  "propertyOrder": 2,
+                  "type": "string",
+                  "format": "select",
+                  "uniqueItems": true,
+                  "enum": [
+                    "10004",
+                    "125",
+                    "120",
+                    "110",
+                    "101",
+                    "75",
+                    "74",
+                    "68",
+                    "66",
+                    "56",
+                    "54",
+                    "51",
+                    "50",
+                    "47",
+                    "36",
+                    "34"
+                  ],
+                  "default": "10004"
+                }
+              }
+            },
+            {
+              "title": "common-SFO1",
+              "properties": {
+                "name": {
+                  "propertyOrder": 1,
+                  "type": "string",
+                  "readOnly": "true",
+                  "enum": [
+                    "eddmodel-SHP-common-SFO1"
+                  ]
+                },
+                "version": {
+                  "propertyOrder": 2,
+                  "type": "string",
+                  "format": "select",
+                  "uniqueItems": true,
+                  "enum": [
+                    "10004",
+                    "125",
+                    "120",
+                    "110",
+                    "101",
+                    "75",
+                    "74",
+                    "68",
+                    "66",
+                    "56",
+                    "54",
+                    "51",
+                    "50",
+                    "47",
+                    "36",
+                    "34"
+                  ],
+                  "default": "10004"
+                }
+              }
+            }
+          ]
+        },
+        "title": "SHP models"
+      }
+    },
+    "required": [
+      "IND_models",
+      "SHP_models"
+    ]
+  },
+  "startval": {
+    "IND_models"             : [
+      {
+        "name": "eddmodel-IND-common-ATL3",
+        "version": "10003"
+      },
+      {
+        "name": "eddmodel-IND-common-SFO1",
+        "version": "10003"
+      }
+    ],
+    "SHP_models"             : [
+      {
+        "name": "eddmodel-SHP-common-ATL3",
+        "version": "10004"
+      },
+      {
+        "name": "eddmodel-SHP-common-SFO1",
+        "version": "10004"
+      }
+    ]
+  }
+}

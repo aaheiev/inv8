@@ -1,0 +1,23 @@
+{
+  "title"             : "common-ATL3",
+  "properties"        : {
+    "name"            : {
+      "propertyOrder" : 1,
+      "type"          : "string",
+      "readOnly"      : "true",
+      "enum"          : ["eddmodel-IND-common-ATL3"]
+
+    },
+    "version"         : {
+      "propertyOrder" : 2,
+      "type"          : "string",
+      "format"        : "select",
+      "uniqueItems"   : true,
+      "enum"          : [
+        "10003",
+        "35"
+      ],
+      "default"       : "10003"
+    }
+  }
+}
